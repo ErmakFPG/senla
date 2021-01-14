@@ -15,8 +15,9 @@ def is_simple(num):
 
 
 while True:
-    number = float(input('Введите целое число: '))
-    if int(number) == number:
-        print(f'Число {int(number)} {is_even(number)} и {is_simple(number)}\n')
+    number = (input('Введите целое число: '))
+    if number.isdigit() and int(number) == float(number):
+        number = int(number)
+        print(f'Число {number} {is_even(number)} и {is_simple(number)}\n')
     else:
-        print('Введенное число не целое\n')
+        print('Ошибка ввода\n')
