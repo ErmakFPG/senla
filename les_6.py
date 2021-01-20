@@ -8,9 +8,6 @@ class Item:
         self.weight = weight
         self.value = cost / weight
 
-    def add_in_backpack(self, backpack):
-        return backpack.append(self.name)
-
 
 try:
     weight_limit = float(input('Введите грузоподьемность рюкзака: '))
@@ -32,7 +29,7 @@ try:
         value_items = []
         for item in sorted_items:
             if item.weight <= weight_limit:
-                item.add_in_backpack(value_items)
+                value_items.append(item.name)
                 weight_limit -= item.weight
 
         print(f'Эффективное заполнение рюкзака: {value_items}')
